@@ -39,7 +39,7 @@ nvim_lsp.ccls.setup {
 }
 
 -- Enable the following language servers
-local servers = {'pyright', 'gopls', 'cmake'}
+local servers = {'pyright', 'gopls', 'cmake', 'bashls'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup{
     on_attach = on_attach,
