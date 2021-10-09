@@ -25,7 +25,7 @@ local list = {
 }
 
 require'nvim-tree'.setup {
-    auto_close = false,
+    auto_close = true,
     indent_markers = true,
     hijack_cursor = true,
     view = {
