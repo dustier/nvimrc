@@ -10,6 +10,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=-1
 set smartindent
+set noshowcmd
 
 set relativenumber
 set number
