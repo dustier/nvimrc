@@ -163,9 +163,9 @@ nnoremap <leader>m :MaximizerToggle!<CR>
 " === fzf search ===
 nnoremap <leader>fg :GFiles<CR>
 nnoremap <Leader>ff :Files<CR>
-nnoremap <Leader>fl :Lines<CR>
 nnoremap <Leader>fb :Buffers<CR>
-nnoremap <Leader>fr :Rg<CR>
+nnoremap <Leader>fl :Lines<CR>
+nnoremap <Leader>rg :Rg<CR>
 let g:fzf_preview_window = 'right:50%'
 
 " vim-floaterm
@@ -197,7 +197,6 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
-
 
 " Neoformat
 " Enable alignment
