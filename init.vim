@@ -91,7 +91,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-vsnip'
 
 Plug 'hrsh7th/vim-vsnip'
-Plug '~/.config/nvim/friendly-snippets'
+Plug 'dustier/friendly-snippets'
 Plug 'onsails/lspkind-nvim'
 
 Plug 'folke/trouble.nvim'
