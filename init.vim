@@ -188,6 +188,8 @@ nnoremap <silent> <leader>v <cmd>TodoTrouble<CR>
 "=============================================================
 
 " fzf.vim
+let $FZF_DEFAULT_OPTS = '--reverse'
+
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
@@ -200,7 +202,7 @@ command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
 command! -bang -nargs=* BLines
     \ call fzf#vim#grep(
     \   'rg --with-filename --column --line-number --no-heading --smart-case . '.fnameescape(expand('%:p')), 1,
-    \   fzf#vim#with_preview({'options': '--layout reverse --query '.shellescape(<q-args>).' --with-nth=4.. --delimiter=":"'}, 'right:50%'))
+    \   fzf#vim#with_preview({'options': '--query '.shellescape(<q-args>).' --with-nth=4.. --delimiter=":"'}, 'right:50%'))
 nnoremap / <cmd>BLines<CR>
 
 " Neoformat
