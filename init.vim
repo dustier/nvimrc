@@ -77,8 +77,6 @@ nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 
-
-
 "=============================================================
 "                      Plugin List
 "=============================================================
@@ -93,6 +91,8 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'dustier/friendly-snippets'
 Plug 'onsails/lspkind-nvim'
+
+Plug 'nvim-lua/lsp-status.nvim'
 
 Plug 'folke/trouble.nvim'
 Plug 'ray-x/lsp_signature.nvim'
@@ -130,7 +130,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-tree.lua'
 
-Plug 'hoob3rt/lualine.nvim'
+Plug 'shadmansaleh/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'dstein64/vim-startuptime'
 
@@ -236,28 +236,26 @@ let g:bookmark_annotation_sign=''
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
-
 lua <<EOF
 vim.g.symbols_outline = {
     highlight_hovered_item=false,
     show_guides = false,
     auto_preview = false,
     show_symbol_details = false
-    }
-require'lualine'.setup{
-options = { theme = 'gruvbox_material'}
 }
+
 require'bufferline'.setup{
-options = {
-    offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center"}},
+    options = {
+        offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center"}},
     }
 }
+
 require('nvim-autopairs').setup{}
 require('todo-comments').setup{
-signs = false,
-highlight = {
-    keyword = "fg",
-    after = ""
+    signs = false,
+    highlight = {
+        keyword = "fg",
+        after = ""
     }
 }
 
@@ -267,5 +265,6 @@ require('trouble').setup{}
 require('tree')
 require('treesitter')
 require('lsp')
+require('line')
 
 EOF
