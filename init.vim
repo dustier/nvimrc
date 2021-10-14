@@ -93,8 +93,6 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'dustier/friendly-snippets'
 Plug 'onsails/lspkind-nvim'
 
-Plug 'nvim-lua/lsp-status.nvim'
-
 Plug 'folke/trouble.nvim'
 Plug 'ray-x/lsp_signature.nvim'
 
