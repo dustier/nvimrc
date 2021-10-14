@@ -27,17 +27,6 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
--- nvim_lsp.ccls.setup {
---     init_options = {
---         compilationDatabaseDirectory = "build",
---         cache = {
---             directory = "/tmp/ccls-cache"
---         },
---     },
---     on_attach = on_attach,
---     capabilities = capabilities,
--- }
-
 -- Enable the following language servers
 local servers = {'clangd', 'pyright', 'gopls', 'cmake', 'bashls'}
 for _, lsp in ipairs(servers) do
@@ -48,10 +37,17 @@ for _, lsp in ipairs(servers) do
 end
 
 require "lsp_signature".setup({
-    floating_window = true,
-    zindex = 10
-
+    hint_enable = false,
 })
+
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
+local feedkey = function(key, mode)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+end
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -73,7 +69,8 @@ cmp.setup {
 		return vim_item
 	end,
   },
-  
+
+
   snippet = {
     expand = function(args)
         vim.fn["vsnip#anonymous"](args.body)
@@ -81,7 +78,7 @@ cmp.setup {
   },
 
   completion = {
-      completeopt = 'menu,menuone,noinsert'
+      completeopt = 'menuone,noselect'
   },
 
   mapping = {
@@ -91,19 +88,27 @@ cmp.setup {
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
+      select = false,
     },
-    ['<Tab>'] = cmp.mapping(function(fallback)
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
-          cmp.select_next_item()
-      elseif vim.fn['vsnip#available']() == 1 then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-expand-or-jump)', true, true, true), '')
+        cmp.select_next_item()
+      elseif vim.fn["vsnip#available"]() == 1 then
+        feedkey("<Plug>(vsnip-expand-or-jump)", "")
+      elseif has_words_before() then
+        cmp.complete()
       else
-        fallback()
+        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
       end
-    end, {'i', 's'}),
-    ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
+    end, { "i", "s" }),
 
+    ["<S-Tab>"] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+        feedkey("<Plug>(vsnip-jump-prev)", "")
+      end
+    end, { "i", "s" }),
   },
   sources = {
     { name = 'nvim_lsp' },
@@ -113,13 +118,3 @@ cmp.setup {
   },
 } 
 
-require("nvim-autopairs.completion.cmp").setup({
-  map_cr = true, --  map <CR> on insert mode
-  map_complete = true, -- it will auto insert `(` (map_char) after select function or method item
-  auto_select = false, -- automatically select the first item
-  insert = false, -- use insert confirm behavior instead of replace
-  map_char = { -- modifies the function or method delimiter by filetypes
-    all = '(',
-    tex = '{'
-  }
-})

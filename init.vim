@@ -5,6 +5,7 @@
 "=============================================================
 let mapleader = " "
 
+set pumheight=10
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -144,6 +145,7 @@ set background=dark
 let g:gruvbox_material_background = 'hard'
 colorscheme gruvbox-material
 
+
 "=============================================================
 "                      Plugin KeyBinding
 "=============================================================
@@ -250,7 +252,6 @@ require'bufferline'.setup{
     }
 }
 
-require('nvim-autopairs').setup{}
 require('todo-comments').setup{
     signs = false,
     highlight = {
@@ -259,6 +260,7 @@ require('todo-comments').setup{
     }
 }
 
+
 require('trouble').setup{}
 
 -- in local lua folder
@@ -266,5 +268,6 @@ require('tree')
 require('treesitter')
 require('lsp')
 require('line')
+require('autopair')
 
 EOF
