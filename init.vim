@@ -187,6 +187,10 @@ nnoremap <silent> <leader>v <cmd>TodoTrouble<CR>
 "                      Plugin Settings
 "=============================================================
 
+" vim-go
+let g:go_code_completion_enabled=0
+let g:go_fmt_fail_silently=1
+
 " fzf.vim
 let $FZF_DEFAULT_OPTS = '--reverse'
 
