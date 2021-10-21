@@ -106,7 +106,8 @@ Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
 Plug 'psliwka/vim-smoothie'
 " Plug 'p00f/nvim-ts-rainbow'
-Plug 'windwp/nvim-autopairs'
+" Plug 'windwp/nvim-autopairs'
+Plug 'steelsojka/pears.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
@@ -258,14 +259,15 @@ require('todo-comments').setup{
     }
 }
 
-
 require('trouble').setup{}
+require "pears".setup()
+
 
 -- in local lua folder
 require('tree')
 require('treesitter')
 require('lsp')
 require('line')
-require('autopair')
+-- require('autopair')
 
 EOF
