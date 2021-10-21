@@ -9,7 +9,7 @@ set pumheight=10
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set softtabstop=-1
+set softtabstop=4
 set smartindent
 set noshowcmd
 
@@ -126,6 +126,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-fugitive'
 " Plug 'w0ng/vim-hybrid'
+Plug 'Vimjas/vim-python-pep8-indent'
 
 Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-tree.lua'
