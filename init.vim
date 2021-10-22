@@ -131,7 +131,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-tree.lua'
 
-Plug 'shadmansaleh/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'dstein64/vim-startuptime'
 
