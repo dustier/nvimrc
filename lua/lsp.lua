@@ -36,6 +36,7 @@ for _, lsp in ipairs(servers) do
 }
 end
 
+-- lsp_signature
 require "lsp_signature".setup({
     hint_enable = false,
 })
@@ -118,3 +119,6 @@ cmp.setup {
   },
 } 
 
+-- nvim-autopairs
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done())
