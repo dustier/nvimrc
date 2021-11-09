@@ -112,7 +112,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 
-Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'simrat39/symbols-outline.nvim'
 
 Plug 'voldikss/vim-floaterm'
@@ -136,6 +135,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'dstein64/vim-startuptime'
 
 Plug 'andymass/vim-matchup'
+Plug 'danymat/neogen'
 
 call plug#end()
 
@@ -178,9 +178,6 @@ nnoremap <silent> gb <cmd>BufferLinePick<CR>
 
 " symbols-outline
 noremap <silent> <leader>s <cmd>SymbolsOutline<CR>
-
-" vim-doge
-nnoremap <silent> <leader>d <cmd>DogeGenerate<CR>
 
 " todo-comments
 nnoremap <silent> <leader>v <cmd>TodoTrouble<CR>
@@ -274,6 +271,7 @@ require('tree')
 require('treesitter')
 require('lsp')
 require('line')
+require('gen')
 -- require('autopair')
 
 EOF
