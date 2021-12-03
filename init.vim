@@ -45,6 +45,9 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 inoremap jk <esc>
 inoremap <esc> <nop>
 
+" <C-a> select entire contents of the current file
+noremap <C-a> ggVG
+
 " switch between windows
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
