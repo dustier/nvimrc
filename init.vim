@@ -130,7 +130,6 @@ Plug 'tpope/vim-fugitive'
 " Plug 'w0ng/vim-hybrid'
 Plug 'Vimjas/vim-python-pep8-indent'
 
-Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'nvim-lualine/lualine.nvim'
@@ -139,14 +138,13 @@ Plug 'dstein64/vim-startuptime'
 
 Plug 'andymass/vim-matchup'
 Plug 'danymat/neogen'
+Plug 'fnune/base16-vim'
 
 call plug#end()
 
 " colorscheme
 set termguicolors
-set background=dark
-let g:gruvbox_material_background = 'hard'
-colorscheme gruvbox-material
+colorscheme base16-classic-dark
 
 
 "=============================================================
