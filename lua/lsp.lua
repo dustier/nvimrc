@@ -61,12 +61,13 @@ cmp.setup {
 		vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
 
 		-- set a name for each source
-		vim_item.menu = ({
-			buffer = "[Buffer]",
-			nvim_lsp = "[LSP]",
-			vsnip = "[VSnip]",
-            path = "[Path]"
-		})[entry.source.name]
+		-- vim_item.menu = ({
+		-- 	buffer = "[Buffer]",
+		-- 	nvim_lsp = "[LSP]",
+		-- 	vsnip = "[VSnip]",
+            -- path = "[Path]"
+		-- })[entry.source.name]
+        vim_item.menu = entry:get_completion_item().detail
 		return vim_item
 	end,
   },
