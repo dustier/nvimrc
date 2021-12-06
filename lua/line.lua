@@ -1,6 +1,6 @@
 require('lualine').setup({
     options = {
-        theme = 'gruvbox-material',
+        theme = 'jellybeans',
         component_separators = '',
         icons_enabled = true,
     },
