@@ -126,8 +126,6 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'szw/vim-maximizer'
-Plug 'tpope/vim-fugitive'
-" Plug 'w0ng/vim-hybrid'
 Plug 'Vimjas/vim-python-pep8-indent'
 
 Plug 'kyazdani42/nvim-tree.lua'
