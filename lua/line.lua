@@ -13,7 +13,7 @@ require('lualine').setup({
             {'filename'},
             {
                 'diagnostics',
-                sources = { 'nvim_lsp' },
+                sources = { 'nvim_diagnostic' },
                 diagnostics_color = {
                     warn = { fg = '#fff000' },
                 },
