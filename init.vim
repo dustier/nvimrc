@@ -95,6 +95,7 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'dustier/friendly-snippets'
 Plug 'onsails/lspkind-nvim'
+Plug 'f-person/git-blame.nvim'
 
 Plug 'folke/trouble.nvim'
 Plug 'ray-x/lsp_signature.nvim'
