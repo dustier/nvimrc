@@ -95,7 +95,8 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'dustier/friendly-snippets'
 Plug 'onsails/lspkind-nvim'
-Plug 'f-person/git-blame.nvim'
+" Plug 'f-person/git-blame.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'folke/trouble.nvim'
 Plug 'ray-x/lsp_signature.nvim'
@@ -263,7 +264,11 @@ require('todo-comments').setup{
 
 require('trouble').setup{}
 require('nvim-autopairs').setup{}
--- require "pears".setup()
+require('gitsigns').setup{
+  current_line_blame_opts = {
+    delay=0
+  }
+}
 
 
 -- in local lua folder
