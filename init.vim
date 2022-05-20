@@ -125,8 +125,10 @@ Plug 'lambdalisue/suda.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+Plug 'ibhagwan/fzf-lua'
+
 Plug 'szw/vim-maximizer'
 Plug 'Vimjas/vim-python-pep8-indent'
 
@@ -163,13 +165,17 @@ nnoremap <leader>ft :Neoformat<CR>
 " === vim maximizer
 nnoremap <leader>m :MaximizerToggle!<CR>
 
-" === fzf search ===
-nnoremap <leader>fg :GFiles<CR>
-nnoremap <Leader>ff :Files<CR>
-nnoremap <Leader>fb :Buffers<CR>
-nnoremap <Leader>fl :Lines<CR>
-nnoremap <Leader>rg :Rg<CR>
-let g:fzf_preview_window = 'right:50%'
+" fzf-lua 
+nnoremap <leader>ff <cmd>lua require('fzf-lua').files()<CR>
+nnoremap <leader>fg <cmd>lua require('fzf-lua').git_files()<CR>
+nnoremap <leader>fb <cmd>lua require('fzf-lua').buffers()<CR>
+nnoremap <leader>fl <cmd>lua require('fzf-lua').lines()<CR>
+nnoremap <leader>bl <cmd>lua require('fzf-lua').blines()<CR>
+
+nnoremap <leader>gp <cmd>lua require('fzf-lua').grep()<CR>
+nnoremap <leader>gl <cmd>lua require('fzf-lua').live_grep_native()<CR>
+
+nnoremap <leader>fr <cmd>lua require('fzf-lua').resume()<CR>
 
 " vim-floaterm
 nnoremap <silent> <leader>gg :FloatermNew --wintype=float --height=1.0 --width=1.0 --autoclose=2 lazygit<CR>
@@ -190,25 +196,6 @@ nnoremap <silent> <leader>v <cmd>TodoTrouble<CR>
 " vim-go
 let g:go_code_completion_enabled=0
 let g:go_fmt_fail_silently=1
-
-" fzf.vim
-let $FZF_DEFAULT_OPTS = '--reverse'
-
-function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
-endfunction
-command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
-
-command! -bang -nargs=* BLines
-    \ call fzf#vim#grep(
-    \   'rg --with-filename --column --line-number --no-heading --smart-case . '.fnameescape(expand('%:p')), 1,
-    \   fzf#vim#with_preview({'options': '--query '.shellescape(<q-args>).' --with-nth=4.. --delimiter=":"'}, 'right:50%'))
-nnoremap H <cmd>BLines<CR>
-nnoremap L <cmd>Lines<CR>
 
 " Neoformat
 " Enable alignment
