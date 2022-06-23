@@ -115,7 +115,7 @@ Plug 'windwp/nvim-autopairs'
 " Plug 'steelsojka/pears.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 
 Plug 'simrat39/symbols-outline.nvim'
 
@@ -194,8 +194,8 @@ nnoremap <silent> <leader>v <cmd>TodoTrouble<CR>
 "=============================================================
 
 " vim-go
-let g:go_code_completion_enabled=0
-let g:go_fmt_fail_silently=1
+" let g:go_code_completion_enabled=0
+" let g:go_fmt_fail_silently=1
 
 " Neoformat
 " Enable alignment
