@@ -25,6 +25,7 @@ local list = {
 }
 
 require'nvim-tree'.setup {
+    reload_on_bufenter = true,
     hijack_cursor = true,
     view = {
         mappings = {
