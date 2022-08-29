@@ -12,6 +12,7 @@ set shiftwidth=4
 set softtabstop=4
 set smartindent
 set noshowcmd
+set mouse=
 
 set relativenumber
 set number
@@ -146,7 +147,11 @@ call plug#end()
 
 " colorscheme
 set termguicolors
+set background=dark
 colorscheme base16-classic-dark
+
+highlight Comment ctermfg=green
+" colorscheme peachpuff
 
 
 "=============================================================
