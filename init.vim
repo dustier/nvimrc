@@ -13,6 +13,7 @@ set softtabstop=4
 set smartindent
 set noshowcmd
 set mouse=
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 
 set relativenumber
 set number
