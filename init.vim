@@ -97,7 +97,6 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'dustier/friendly-snippets'
 Plug 'onsails/lspkind-nvim'
-" Plug 'f-person/git-blame.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'folke/trouble.nvim'
@@ -112,14 +111,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
 Plug 'psliwka/vim-smoothie'
-" Plug 'p00f/nvim-ts-rainbow'
 Plug 'windwp/nvim-autopairs'
-" Plug 'steelsojka/pears.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 
-Plug 'simrat39/symbols-outline.nvim'
+Plug 'liuchengxu/vista.vim'
 
 Plug 'voldikss/vim-floaterm'
 Plug 'lambdalisue/suda.vim'
@@ -127,8 +123,6 @@ Plug 'lambdalisue/suda.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
 Plug 'ibhagwan/fzf-lua'
 
 Plug 'szw/vim-maximizer'
@@ -189,8 +183,16 @@ nnoremap <silent> <leader>gg :FloatermNew --wintype=float --height=1.0 --width=1
 " bufferline.nvim
 nnoremap <silent> gb <cmd>BufferLinePick<CR>
 
-" symbols-outline
-noremap <silent> <leader>s <cmd>SymbolsOutline<CR>
+" Vista
+let g:vista_default_executive = 'nvim_lsp'
+let g:vista_cursor_delay = 0
+let g:vista_echo_cursor_strategy = 'floating_win'
+let g:vista_disable_statusline = 0
+let g:vista_highlight_whole_line = 0
+let g:vista_floating_border = 'single'
+let g:vista_floating_delay = 0
+let g:vista_icon_indent = ["> ", ""]
+nnoremap <silent> <leader>s <cmd>Vista!!<CR>
 
 " todo-comments
 nnoremap <silent> <leader>v <cmd>TodoTrouble<CR>
@@ -198,10 +200,6 @@ nnoremap <silent> <leader>v <cmd>TodoTrouble<CR>
 "=============================================================
 "                      Plugin Settings
 "=============================================================
-
-" vim-go
-" let g:go_code_completion_enabled=0
-" let g:go_fmt_fail_silently=1
 
 " Neoformat
 " Enable alignment
@@ -234,13 +232,6 @@ let g:bookmark_annotation_sign=''
 set shortmess+=c
 
 lua <<EOF
-vim.g.symbols_outline = {
-    highlight_hovered_item=false,
-    show_guides = false,
-    auto_preview = false,
-    show_symbol_details = false
-}
-
 require'bufferline'.setup{
     options = {
         offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center"}},
