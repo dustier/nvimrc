@@ -184,7 +184,7 @@ nnoremap <silent> <leader>gg :FloatermNew --wintype=float --height=1.0 --width=1
 nnoremap <silent> gb <cmd>BufferLinePick<CR>
 
 " Vista
-let g:vista_default_executive = 'nvim_lsp'
+" let g:vista_default_executive = 'ctags'
 let g:vista_cursor_delay = 0
 let g:vista_echo_cursor_strategy = 'floating_win'
 let g:vista_disable_statusline = 0
