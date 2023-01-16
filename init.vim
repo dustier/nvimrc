@@ -154,7 +154,7 @@ highlight Comment ctermfg=green
 "=============================================================
 
 " trouble
-nnoremap <leader>t <cmd>TroubleToggle<CR>
+nnoremap <leader>t <cmd>TroubleToggle workspace_diagnostics<CR>
 
 " nvim-tree
 nnoremap <leader>e <cmd>NvimTreeToggle<CR>
@@ -195,7 +195,7 @@ let g:vista_icon_indent = ["> ", ""]
 nnoremap <silent> <leader>s <cmd>Vista!!<CR>
 
 " todo-comments
-nnoremap <silent> <leader>v <cmd>TodoTrouble<CR>
+nnoremap <silent> <leader>v <cmd>TroubleToggle todo<CR>
 
 "=============================================================
 "                      Plugin Settings
