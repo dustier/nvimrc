@@ -123,6 +123,7 @@ Plug 'folke/todo-comments.nvim'
 Plug 'liuchengxu/vista.vim'
 
 Plug 'voldikss/vim-floaterm'
+Plug 'akinsho/toggleterm.nvim'
 Plug 'lambdalisue/suda.vim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -266,6 +267,7 @@ require('treesitter')
 require('lsp')
 require('line')
 require('gen')
+require('terminal')
 -- require('autopair')
 
 EOF
