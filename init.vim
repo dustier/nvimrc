@@ -47,6 +47,11 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 inoremap jk <esc>
 inoremap <esc> <nop>
 
+nnoremap H ^
+nnoremap L $
+onoremap H ^
+onoremap L $
+
 " <C-a> select entire contents of the current file
 noremap <C-a> ggVG
 
