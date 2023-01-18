@@ -101,7 +101,6 @@ Plug 'hrsh7th/cmp-vsnip'
 
 Plug 'hrsh7th/vim-vsnip'
 Plug 'dustier/friendly-snippets'
-Plug 'onsails/lspkind-nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'folke/trouble.nvim'

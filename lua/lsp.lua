@@ -66,24 +66,21 @@ end
 local cmp = require 'cmp'
 cmp.setup {
   preselect = cmp.PreselectMode.None,
-  formatting = {
-	deprecated = true,
-	format = function(entry, vim_item)
-		-- fancy icons and a name of kind
-		vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
+  -- formatting = {
+	-- -- deprecated = true,
+	-- format = function(entry, vim_item)
+  --       -- local item_text = entry:get_completion_item().label
+  --       -- local i = string.find(item_text, "%(")
+  --       -- if i ~= nil then 
+  --       --     item_text = string.sub(item_text, 1, i - 1)
+  --       -- end
 
-		-- set a name for each source
-		-- vim_item.menu = ({
-		-- 	buffer = "[Buffer]",
-		-- 	nvim_lsp = "[LSP]",
-		-- 	vsnip = "[VSnip]",
-            -- path = "[Path]"
-		-- })[entry.source.name]
-        vim_item.menu = entry:get_completion_item().detail
-		return vim_item
-	end,
-  },
-
+  --       -- vim_item.abbr = item_text
+        
+  --       vim_item.menu = entry:get_completion_item().detail
+		-- return vim_item
+	-- end,
+  -- },
 
   snippet = {
     expand = function(args)
@@ -95,10 +92,15 @@ cmp.setup {
       completeopt = 'menuone,noselect'
   },
 
+  window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+  },
+
   mapping = {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    -- ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
