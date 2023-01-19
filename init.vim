@@ -46,7 +46,8 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " jk to normal mode
 inoremap jk <esc>
 inoremap <esc> <nop>
-tnoremap jk <c-\><c-n>
+tnoremap <esc> <c-\><c-n>
+tnoremap <c-l> <nop>
 
 nnoremap H ^
 nnoremap L $
