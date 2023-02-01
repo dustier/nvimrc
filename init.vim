@@ -162,6 +162,7 @@ highlight Comment ctermfg=green
 
 " trouble
 nnoremap <leader>t <cmd>TroubleToggle workspace_diagnostics<CR>
+nnoremap <leader>u <cmd>TroubleToggle document_diagnostics<CR>
 
 " nvim-tree
 nnoremap <leader>e <cmd>NvimTreeToggle<CR>
