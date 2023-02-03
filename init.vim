@@ -53,6 +53,15 @@ nnoremap H ^
 nnoremap L $
 onoremap H ^
 onoremap L $
+vnoremap H ^
+vnoremap L $
+
+nnoremap $ <nop>
+nnoremap ^ <nop>
+onoremap $ <nop>
+onoremap ^ <nop>
+vnoremap $ <nop>
+vnoremap ^ <nop>
 
 " <C-a> select entire contents of the current file
 noremap <C-a> ggVG
