@@ -75,7 +75,7 @@ nnoremap <leader>l <C-w>l
 " jump in quickfix list
 map <silent><C-j> :cnext<CR>
 map <silent><C-k> :cprevious<CR>
-nnoremap <silent><C-c> :cclose<CR>
+nnoremap <silent><esc> :cclose<CR>
 
 " close window
 nnoremap <silent><leader>wc <cmd>close<CR>
