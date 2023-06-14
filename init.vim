@@ -120,6 +120,8 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'rbgrouleff/bclose.vim'
 
+Plug 'ggandor/leap.nvim'
+
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-commentary'
@@ -279,6 +281,7 @@ require('lsp')
 require('line')
 require('gen')
 require('terminal')
+require('leap_')
 -- require('autopair')
 
 EOF
