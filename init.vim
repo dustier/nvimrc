@@ -118,7 +118,8 @@ Plug 'folke/trouble.nvim'
 Plug 'ray-x/lsp_signature.nvim'
 
 Plug 'akinsho/bufferline.nvim'
-Plug 'rbgrouleff/bclose.vim'
+" Plug 'rbgrouleff/bclose.vim'
+Plug 'moll/vim-bbye'
 
 Plug 'ggandor/leap.nvim'
 
@@ -174,6 +175,9 @@ highlight Comment ctermfg=green
 " trouble
 nnoremap <leader>t <cmd>TroubleToggle workspace_diagnostics<CR>
 nnoremap <leader>u <cmd>TroubleToggle document_diagnostics<CR>
+
+" vim-bbye
+nnoremap <leader>bd <cmd>Bwipeout<CR>
 
 " nvim-tree
 nnoremap <leader>e <cmd>NvimTreeToggle<CR>
