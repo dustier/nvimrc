@@ -1,4 +1,3 @@
-local nvim_lsp = require 'lspconfig'
 
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -45,25 +44,27 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = {'clangd', 'pyright', 'cmake'}
+-- local servers = {'clangd', 'pyright', 'cmake'}
+local servers = {'clangd', 'pyright'}
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup{
+  vim.lsp.config(lsp, {
     on_attach = on_attach,
     capabilities = capabilities,
-}
+  })
 end
+vim.lsp.enable(servers)
 
-nvim_lsp['rust_analyzer'].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-        ['rust-analyzer'] = {
-            checkOnSave = {
-                command = "clippy"
-            },
-        }
-    }
-})
+-- nvim_lsp['rust_analyzer'].setup({
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     settings = {
+--         ['rust-analyzer'] = {
+--             checkOnSave = {
+--                 command = "clippy"
+--             },
+--         }
+--     }
+-- })
 
 -- lsp_signature
 require "lsp_signature".setup({
@@ -99,11 +100,11 @@ cmp.setup {
 	-- end,
   -- },
 
-  snippet = {
-    expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
+  -- snippet = {
+  --   expand = function(args)
+  --       vim.fn["vsnip#anonymous"](args.body)
+  --   end,
+  -- },
 
   completion = {
       completeopt = 'menuone,noselect'
@@ -145,7 +146,7 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'vsnip' },
+    -- { name = 'vsnip' },
     { name = 'path' },
     { name = 'buffer' }
   },
