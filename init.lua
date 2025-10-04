@@ -133,6 +133,7 @@ vim.pack.add({
     { src = "https://github.com/ray-x/lsp_signature.nvim" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
+    { src = "https://github.com/folke/sidekick.nvim" },
 })
 
 vim.cmd.colorscheme "catppuccin"
@@ -236,6 +237,7 @@ require('treesitter')
 require('lsp')
 require('line')
 require('leap_')
+require('copilot_sidekick')
 
 -- Plug 'Vimjas/vim-python-pep8-indent'
 

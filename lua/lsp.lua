@@ -45,10 +45,10 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Enable the following language servers
 -- local servers = {'clangd', 'pyright', 'cmake'}
-local servers = {'clangd', 'pyright'}
+local servers = {'clangd', 'pyright', 'copilot'}
 for _, lsp in ipairs(servers) do
   vim.lsp.config(lsp, {
-    on_attach = on_attach,
+    -- on_attach = on_attach,
     capabilities = capabilities,
   })
 end
@@ -127,8 +127,9 @@ cmp.setup {
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif vim.fn["vsnip#available"]() == 1 then
-        feedkey("<Plug>(vsnip-expand-or-jump)", "")
+      -- elseif vim.fn["vsnip#available"]() == 1 then
+      --   feedkey("<Plug>(vsnip-expand-or-jump)", "")
+        -- if you are using Neovim's native inline completions
       elseif has_words_before() then
         cmp.complete()
       else
@@ -139,8 +140,8 @@ cmp.setup {
     ["<S-Tab>"] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-        feedkey("<Plug>(vsnip-jump-prev)", "")
+      -- elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+      --   feedkey("<Plug>(vsnip-jump-prev)", "")
       end
     end, { "i", "s" }),
   },
