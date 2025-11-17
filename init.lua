@@ -108,7 +108,6 @@ vim.pack.add({
     { src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/akinsho/bufferline.nvim" },
-	{ src = "https://github.com/moll/vim-bbye" },
 	{ src = "https://github.com/ggandor/leap.nvim" },
     { src = "https://github.com/tpope/vim-surround" },
     { src = "https://github.com/gcmt/wildfire.vim" },
@@ -144,9 +143,6 @@ vim.cmd.colorscheme "catppuccin"
 --  trouble
 vim.keymap.set("n", "<leader>t", "<cmd>TroubleToggle workspace_diagnostics<CR>", { noremap = true, silent = false })
 vim.keymap.set("n", "<leader>u", "<cmd>TroubleToggle document_diagnostics<CR>", { noremap = true, silent = false })
-
--- vim-bbye
-vim.keymap.set("n", "<leader>bd", "<cmd>Bwipeout<CR>", { noremap = true, silent = true })
 
 -- " nvim-tree
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
@@ -223,6 +219,7 @@ require('gitsigns').setup{
 
 
 -- in local lua folder
+require('mini')
 require('tree')
 require('treesitter')
 require('lsp')
