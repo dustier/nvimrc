@@ -76,7 +76,6 @@ vim.keymap.set("n", "<leader>h", "<C-w>h", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>k", "<C-w>k", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>l", "<C-w>l", { noremap = true, silent = true })
-
 -- 在 quickfix 列表中跳转
 vim.keymap.set("n", "<C-j>", ":cnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-k>", ":cprevious<CR>", { noremap = true, silent = true })
@@ -109,7 +108,6 @@ vim.pack.add({
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/akinsho/bufferline.nvim" },
 	{ src = "https://github.com/ggandor/leap.nvim" },
-    { src = "https://github.com/tpope/vim-surround" },
     { src = "https://github.com/gcmt/wildfire.vim" },
     { src = "https://github.com/psliwka/vim-smoothie" },
     { src = "https://github.com/windwp/nvim-autopairs" },
