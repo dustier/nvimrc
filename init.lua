@@ -237,7 +237,7 @@ require('treesitter')
 require('lsp')
 require('line')
 require('leap_')
-require('copilot_sidekick')
+require('code')
 
 -- Plug 'Vimjas/vim-python-pep8-indent'
 

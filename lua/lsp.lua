@@ -45,14 +45,14 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Enable the following language servers
 -- local servers = {'clangd', 'pyright', 'cmake'}
-local servers = {'clangd', 'pyright', 'copilot'}
+local servers = {'clangd', 'pyright', 'copilot', 'gopls'}
 for _, lsp in ipairs(servers) do
   vim.lsp.config(lsp, {
-    -- on_attach = on_attach,
+    on_attach = on_attach,
     capabilities = capabilities,
   })
+  vim.lsp.enable(lsp)
 end
-vim.lsp.enable(servers)
 
 -- nvim_lsp['rust_analyzer'].setup({
 --     on_attach = on_attach,
