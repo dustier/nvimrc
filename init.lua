@@ -105,11 +105,11 @@ vim.keymap.set("n", "<leader>p", '"+p', { noremap = true, silent = true })
 -- =============================================================
 vim.pack.add({
 	{ src = "https://github.com/catppuccin/nvim" },
+    { src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/akinsho/bufferline.nvim" },
 	{ src = "https://github.com/moll/vim-bbye" },
 	{ src = "https://github.com/ggandor/leap.nvim" },
-    { src = "https://github.com/tpope/vim-commentary" },    
     { src = "https://github.com/tpope/vim-surround" },
     { src = "https://github.com/gcmt/wildfire.vim" },
     { src = "https://github.com/psliwka/vim-smoothie" },
@@ -185,15 +185,6 @@ vim.keymap.set("n", "<leader>v", "<cmd>TroubleToggle todo<CR>", { noremap = true
 vim.g.neoformat_basic_format_align = 1    -- 启用对齐
 vim.g.neoformat_basic_format_retab = 1    -- 启用 Tab 转空格
 vim.g.neoformat_basic_format_trim = 1     -- 启用删除行尾空白
-
--- vim commentary：为 C++ 文件设置注释格式
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "cpp",
-  callback = function()
-    vim.opt_local.commentstring = "// %s"
-  end,
-})
-
 
 -- vim-bookmarks
 -- 设置高亮（highlight）
