@@ -110,6 +110,7 @@ vim.pack.add({
 	-- { src = "https://github.com/ggandor/leap.nvim" },
     { src = "https://github.com/gcmt/wildfire.vim" },
     -- { src = "https://github.com/windwp/nvim-autopairs" },
+    { src = "https://github.com/psliwka/vim-smoothie" },
     { src = "https://github.com/nvim-lua/plenary.nvim" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
     -- { src = "https://github.com/kyazdani42/nvim-tree.lua" },
