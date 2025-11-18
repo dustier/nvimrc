@@ -31,6 +31,7 @@ require('mini.surround').setup({
   search_method = 'cover',
 })
 
+-- mini.animate
 require('mini.animate').setup({
   cursor = { enable = false },
   scroll = { enable = true },
@@ -38,3 +39,28 @@ require('mini.animate').setup({
   open = { enable = false },
   close = { enable = false },
 })
+
+-- mini.files
+local files = require('mini.files');
+files.setup({
+  mappings = {
+    close       = '<leader>e',
+    go_in       = '',
+    go_in_plus  = 'l',
+    go_out      = 'h',
+    go_out_plus = '',
+    mark_goto   = "'",
+    mark_set    = 'm',
+    reset       = '<BS>',
+    reveal_cwd  = '@',
+    show_help   = 'g?',
+    synchronize = '=',
+    trim_left   = '',
+    trim_right  = '',
+  },
+  windows = { 
+    preview = true,
+    width_preview = 100,
+  },
+})
+vim.keymap.set("n", "<leader>e", function() files.open() end, { noremap = true, silent = true })

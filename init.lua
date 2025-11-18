@@ -113,7 +113,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-lua/plenary.nvim" },
     { src = "https://github.com/folke/todo-comments.nvim" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
-    { src = "https://github.com/kyazdani42/nvim-tree.lua" },
+    -- { src = "https://github.com/kyazdani42/nvim-tree.lua" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
     { src = "https://github.com/kyazdani42/nvim-web-devicons" },
     { src = "https://github.com/andymass/vim-matchup" },
@@ -142,7 +142,7 @@ vim.keymap.set("n", "<leader>t", "<cmd>TroubleToggle workspace_diagnostics<CR>",
 vim.keymap.set("n", "<leader>u", "<cmd>TroubleToggle document_diagnostics<CR>", { noremap = true, silent = false })
 
 -- " nvim-tree
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- vim maximizer
 vim.keymap.set("n", "<leader>m", "<cmd>MaximizerToggle!<CR>", { noremap = true, silent = true })
@@ -193,9 +193,9 @@ vim.g.bookmark_annotation_sign = ""
 vim.opt.shortmess:append("c")
 
 require'bufferline'.setup{
-    options = {
-        offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center"}},
-    }
+    -- options = {
+    --     offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center"}},
+    -- }
 }
 
 require('todo-comments').setup{
@@ -217,7 +217,7 @@ require('gitsigns').setup{
 
 -- in local lua folder
 require('mini')
-require('tree')
+-- require('tree')
 require('treesitter')
 require('lsp')
 require('line')
