@@ -32,9 +32,17 @@ require('mini.surround').setup({
 })
 
 -- mini.animate
-require('mini.animate').setup({
+local animate = require('mini.animate');
+animate.setup({
   cursor = { enable = false },
-  scroll = { enable = true },
+  scroll = {
+    enable = true,
+    -- Animate for 200 milliseconds with linear easing
+    timing = animate.gen_timing.linear({ duration = 70, unit = 'total' }),
+
+    -- Animate equally but with at most 120 steps instead of default 60
+    -- subscroll = animate.gen_subscroll.equal({ max_output_steps = 60 }),
+  },
   resize = { enable = false },
   open = { enable = false },
   close = { enable = false },
