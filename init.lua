@@ -109,7 +109,7 @@ vim.pack.add({
 	-- { src = "https://github.com/akinsho/bufferline.nvim" },
 	-- { src = "https://github.com/ggandor/leap.nvim" },
     { src = "https://github.com/gcmt/wildfire.vim" },
-    { src = "https://github.com/windwp/nvim-autopairs" },
+    -- { src = "https://github.com/windwp/nvim-autopairs" },
     { src = "https://github.com/nvim-lua/plenary.nvim" },
     { src = "https://github.com/folke/todo-comments.nvim" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
@@ -207,7 +207,7 @@ require('todo-comments').setup{
 }
 
 require('trouble').setup{}
-require('nvim-autopairs').setup{}
+-- require('nvim-autopairs').setup{}
 require('gitsigns').setup{
   current_line_blame_opts = {
     delay=0
