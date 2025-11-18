@@ -64,3 +64,5 @@ files.setup({
   },
 })
 vim.keymap.set("n", "<leader>e", function() files.open() end, { noremap = true, silent = true })
+
+require('mini.tabline').setup()

@@ -106,7 +106,7 @@ vim.pack.add({
 	{ src = "https://github.com/catppuccin/nvim" },
     { src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
-	{ src = "https://github.com/akinsho/bufferline.nvim" },
+	-- { src = "https://github.com/akinsho/bufferline.nvim" },
 	{ src = "https://github.com/ggandor/leap.nvim" },
     { src = "https://github.com/gcmt/wildfire.vim" },
     { src = "https://github.com/windwp/nvim-autopairs" },
@@ -165,7 +165,7 @@ vim.keymap.set("n", "<leader>gl", function() require('fzf-lua').live_grep_native
 vim.keymap.set("n", "<leader>fr", function() require('fzf-lua').resume() end, { noremap = true, silent = true })
 
 -- bufferline.nvim
-vim.keymap.set("n", "gb", "<cmd>BufferLinePick<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "gb", "<cmd>BufferLinePick<CR>", { noremap = true, silent = true })
 
 -- todo-comments (via Trouble.nvim)
 vim.keymap.set("n", "<leader>v", "<cmd>TroubleToggle todo<CR>", { noremap = true, silent = true })
@@ -192,11 +192,11 @@ vim.g.bookmark_annotation_sign = ""
 -- Avoid showing message extra message when using completion
 vim.opt.shortmess:append("c")
 
-require'bufferline'.setup{
-    -- options = {
-    --     offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center"}},
-    -- }
-}
+-- require'bufferline'.setup{
+--     -- options = {
+--     --     offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center"}},
+--     -- }
+-- }
 
 require('todo-comments').setup{
     signs = false,
