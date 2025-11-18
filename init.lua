@@ -107,7 +107,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	-- { src = "https://github.com/akinsho/bufferline.nvim" },
-	{ src = "https://github.com/ggandor/leap.nvim" },
+	-- { src = "https://github.com/ggandor/leap.nvim" },
     { src = "https://github.com/gcmt/wildfire.vim" },
     { src = "https://github.com/windwp/nvim-autopairs" },
     { src = "https://github.com/nvim-lua/plenary.nvim" },
@@ -221,7 +221,7 @@ require('mini')
 require('treesitter')
 require('lsp')
 require('line')
-require('leap_')
+-- require('leap_')
 require('code')
 
 -- Plug 'Vimjas/vim-python-pep8-indent'

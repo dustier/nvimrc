@@ -73,4 +73,10 @@ files.setup({
 })
 vim.keymap.set("n", "<leader>e", function() files.open() end, { noremap = true, silent = true })
 
+-- mini.tabline
 require('mini.tabline').setup()
+
+-- mini.jump2d
+require('mini.jump2d').setup()
+vim.keymap.set('n', 's', '<Cmd>lua MiniJump2d.start(MiniJump2d.builtin_opts.query)<CR>')
+
