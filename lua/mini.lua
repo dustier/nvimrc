@@ -82,3 +82,23 @@ vim.keymap.set('n', 's', '<Cmd>lua MiniJump2d.start(MiniJump2d.builtin_opts.quer
 
 -- mini.pairs
 require('mini.pairs').setup()
+
+-- mini.hipatterns
+local hipatterns = require('mini.hipatterns')
+hipatterns.setup({
+  highlighters = {
+    -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+    fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+    hack  = { pattern = '%f[%w]()HACK()%f[%W]',  group = 'MiniHipatternsHack'  },
+    todo  = { pattern = '%f[%w]()TODO()%f[%W]',  group = 'MiniHipatternsTodo'  },
+    note  = { pattern = '%f[%w]()NOTE()%f[%W]',  group = 'MiniHipatternsNote'  },
+  },
+  -- Delays (in ms) defining asynchronous highlighting process
+  delay = {
+    -- How much to wait for update after every text change
+    text_change = 0,
+
+    -- How much to wait for update after window scroll
+    scroll = 50,
+  },
+})

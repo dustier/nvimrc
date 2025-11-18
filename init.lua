@@ -111,7 +111,6 @@ vim.pack.add({
     { src = "https://github.com/gcmt/wildfire.vim" },
     -- { src = "https://github.com/windwp/nvim-autopairs" },
     { src = "https://github.com/nvim-lua/plenary.nvim" },
-    { src = "https://github.com/folke/todo-comments.nvim" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
     -- { src = "https://github.com/kyazdani42/nvim-tree.lua" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
@@ -161,14 +160,10 @@ vim.keymap.set("n", "<leader>bl", function() require('fzf-lua').blines() end, { 
 
 vim.keymap.set("n", "<leader>gp", function() require('fzf-lua').grep() end, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gl", function() require('fzf-lua').live_grep_native() end, { noremap = true, silent = true })
-
 vim.keymap.set("n", "<leader>fr", function() require('fzf-lua').resume() end, { noremap = true, silent = true })
 
 -- bufferline.nvim
 -- vim.keymap.set("n", "gb", "<cmd>BufferLinePick<CR>", { noremap = true, silent = true })
-
--- todo-comments (via Trouble.nvim)
-vim.keymap.set("n", "<leader>v", "<cmd>TroubleToggle todo<CR>", { noremap = true, silent = true })
 
 -- "=============================================================
 -- "                      Plugin Settings
@@ -197,14 +192,6 @@ vim.opt.shortmess:append("c")
 --     --     offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center"}},
 --     -- }
 -- }
-
-require('todo-comments').setup{
-    signs = false,
-    highlight = {
-        keyword = "fg",
-        after = ""
-    }
-}
 
 require('trouble').setup{}
 -- require('nvim-autopairs').setup{}
