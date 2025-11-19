@@ -138,8 +138,8 @@ vim.cmd.colorscheme "catppuccin"
 --                       Plugin Keymaps
 -- =============================================================
 --  trouble
-vim.keymap.set("n", "<leader>t", "<cmd>TroubleToggle workspace_diagnostics<CR>", { noremap = true, silent = false })
-vim.keymap.set("n", "<leader>u", "<cmd>TroubleToggle document_diagnostics<CR>", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>t", "<cmd>Trouble diagnostics toggle focus=true filter.buf=0<CR>", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>v", "<cmd>Trouble symbols toggle<CR>", { noremap = true, silent = false })
 
 -- " nvim-tree
 -- vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
@@ -194,7 +194,8 @@ vim.opt.shortmess:append("c")
 --     -- }
 -- }
 
-require('trouble').setup{}
+require("trouble").setup()
+
 -- require('nvim-autopairs').setup{}
 require('gitsigns').setup{
   current_line_blame_opts = {
