@@ -62,7 +62,7 @@ require("sidekick").setup({
         -- hide_n        = { "q"    , "hide"      , mode = "n" , desc = "hide the terminal window" },
         hide_t        = { "<c-l>", "hide"      , mode = {"n", "t"}, desc = "hide the terminal window" },
         prompt        = { "<c-o>", "prompt"    , mode = "t" , desc = "insert prompt or context" },
-        stopinsert    = { "jk", "stopinsert", mode = "t" , desc = "enter normal mode" },
+        stopinsert    = { "<esc>", "stopinsert", mode = "t" , desc = "enter normal mode" },
 
         -- stopinsert = { "<esc><esc>", "stopinsert", mode = "t" }, -- enter normal mode
         -- hide_n = { "q", "hide", mode = "n" }, -- hide from normal mode
