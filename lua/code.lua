@@ -50,39 +50,25 @@ require("sidekick").setup({
       -- Options used when layout is "left"|"bottom"|"top"|"right"
       ---@type vim.api.keyset.win_config
       split = {
-        width = 80,
+        width = 120,
         height = 20,
       },
       --- CLI Tool Keymaps
       --- default mode is `t`
       ---@type table<string, sidekick.cli.Keymap|false>
       keys = {
-        -- buffers       = { "<c-i>", "buffers"   , mode = "nt", desc = "open buffer picker" },
+        buffers       = { "<c-i>", "buffers"   , mode = "nt", desc = "open buffer picker" },
         files         = { "<c-f>", "files"     , mode = {"n", "t"}, desc = "open file picker" },
-        -- hide_n        = { "q"    , "hide"      , mode = "n" , desc = "hide the terminal window" },
         hide_t        = { "<c-l>", "hide"      , mode = {"n", "t"}, desc = "hide the terminal window" },
-        prompt        = { "<c-o>", "prompt"    , mode = "t" , desc = "insert prompt or context" },
+        prompt        = { "<c-p>", "prompt"      , mode = {"t"}, desc = "insert prompt or context" },
         stopinsert    = { "<esc>", "stopinsert", mode = "t" , desc = "enter normal mode" },
-
-        -- stopinsert = { "<esc><esc>", "stopinsert", mode = "t" }, -- enter normal mode
-        -- hide_n = { "q", "hide", mode = "n" }, -- hide from normal mode
-        -- hide_t = { "<c-l>", "hide" }, -- hide from terminal mode
-        -- win_p = { "<c-h>", "blur" }, -- leave the cli window
-        -- prompt = { "<c-o>", "prompt" }, -- insert prompt or context
-        -- example of custom keymap:
-        -- say_hi = {
-        --   "<c-h>",
-        --   function(t)
-        --     t:send("hi!")
-        --   end,
-        -- },
       },
     },
     ---@class sidekick.cli.Mux
     ---@field backend? "tmux"|"zellij" Multiplexer backend to persist CLI sessions
     mux = {
       backend = "tmux",
-      enabled = false,
+      enabled = true,
     },
     ---@type table<string, sidekick.cli.Tool.spec>
     tools = {
@@ -133,7 +119,6 @@ require("sidekick").setup({
 })
 
 
--- vim.keymap.set({ "n", "v", "t" }, "<c-p>", function() require("sidekick.cli").toggle({ name = "opencode", focus = true }) end, { noremap = true, silent = true })
 vim.keymap.set({ "n", "v", "t" }, "<c-l>", function() require("sidekick.cli").toggle({ name = "copilot", focus = true }) end, { noremap = true, silent = true })
 vim.keymap.set({ "i" }, "<c-g>", function()
         -- if there is a next edit, jump to it, otherwise apply it if any

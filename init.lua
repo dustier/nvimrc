@@ -36,7 +36,7 @@ vim.opt.writebackup = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.incsearch = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 
 -- 自动保存与性能
 vim.opt.autowrite = true
@@ -195,6 +195,7 @@ vim.opt.shortmess:append("c")
 -- }
 
 require("trouble").setup()
+require("fzf-lua").register_ui_select()
 
 -- require('nvim-autopairs').setup{}
 require('gitsigns').setup{
