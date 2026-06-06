@@ -1,6 +1,5 @@
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
--- vim.cmd("packadd nvim-treesitter")
 require('nvim-treesitter.configs').setup {
   matchup = {
     enable = true
@@ -22,6 +21,3 @@ require('nvim-treesitter.configs').setup {
   },
 }
 require'treesitter-context'.setup{}
-
--- vim.opt.foldmethod = 'expr'
--- vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
