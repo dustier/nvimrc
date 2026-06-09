@@ -12,6 +12,7 @@ vim.pack.add({
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/folke/trouble.nvim" },
   { src = "https://github.com/MattesGroeger/vim-bookmarks" },
+  { src = "https://github.com/dustier/cli-bridge.nvim" },
   { src = "https://github.com/hrsh7th/nvim-cmp" },
   { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
   { src = "https://github.com/hrsh7th/cmp-path" },
