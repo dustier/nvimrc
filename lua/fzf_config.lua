@@ -22,6 +22,12 @@ vim.keymap.set("n", "<leader>gp", function()
   require("fzf-lua").grep()
 end, { silent = true })
 
+vim.keymap.set("n", "<leader>gw", function()
+  require("fzf-lua").live_grep_native({
+    search = vim.fn.expand("<cword>"),
+  })
+end, { silent = true })
+
 vim.keymap.set("n", "<leader>gl", function()
   require("fzf-lua").live_grep_native()
 end, { silent = true })
